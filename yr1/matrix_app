@@ -1,0 +1,62 @@
+import java.util.Scanner;
+public class matrixapp           
+{
+    public static void main(String args[])
+    {
+        int p, q, sum = 0, c, d, k;
+        int first[][] = new int[2][2];
+        int second[][] = new int[2][2];
+         Scanner in = new Scanner(System.in);
+        Matrix calculate = new Matrix();
+
+        do
+        {
+            System.out.println("Enter 1 for multiplication and 2 for inverse");
+            c = in.nextInt();
+
+            if(c==1)
+            {
+                System.out.println("Enter the elements of first matrix");
+               
+
+                for ( int i = 0 ; i < 2 ; i++ )
+                {
+                    for ( int j = 0 ; j < 2 ; j++ )
+                    {
+                        System.out.println("Enter the elements of .......:"+i+".."+j);
+                        first[i][j] = in.nextInt();
+                    }
+                }
+
+                System.out.println("Enter the elements of 2nd Matrix");
+               
+
+                for ( int i = 0 ; i < 2 ; i++ )
+                {
+                    for ( int j = 0 ; j < 2 ; j++ )
+                    {
+                        System.out.println("Enter the elements of .......:"+i+".."+j);
+                        second[i][j] = in.nextInt();
+                    }
+                }
+
+                calculate.multiplyarray(first, second);
+            }
+            if(c==2)
+            {
+                System.out.println("Enter the elements of first matrix");
+
+                for ( int i = 0 ; i < 2 ; i++ )
+                {
+                    for ( int j = 0 ; j < 2 ; j++ )
+                    {
+                        System.out.println("Enter the elements of .......:"+i+".."+j);
+                        first[i][j] = in.nextInt();
+                    }
+                }
+               
+            }
+        }while(c<3);
+
+    }// end main
+}// end class
