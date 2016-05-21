@@ -1,0 +1,19 @@
+public class ListNode {
+
+	private Object data;					//the contained data object
+	private ListNode next;					//the self-reference
+	
+	//constructor
+	public ListNode (Object newData, ListNode newNext) {
+		data = newData;
+		next = newNext;
+	}
+	
+	//methods to get and set data
+	public Object getData() {return data;}
+	public void setData(Object newData) {data = newData;}
+	
+	//methods to get and set the next node
+	public ListNode getNext() {return next;}
+	public void setNext(ListNode newNext) {next = newNext;}
+}
