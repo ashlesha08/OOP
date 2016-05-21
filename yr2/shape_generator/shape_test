@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class ShapeTest
+{
+    public static void main(String[] args)
+    {
+        Scanner user_input = new Scanner(System.in);
+        
+        int xval, yval, r, h, inputShape;
+        
+        System.out.println("Would you like: ");
+        System.out.println("[1] Point");
+        System.out.println("[2] Circle");
+        System.out.println("[3] Cylinder");
+        inputShape = user_input.nextInt();
+        
+        if (inputShape == 2)
+        {
+            System.out.println("Please enter the x co-ordinate: ");
+            xval = user_input.nextInt();
+            System.out.println("Please enter the y co-ordinate: ");
+            yval = user_input.nextInt();
+            System.out.println("Please enter the radius: ");
+            r = user_input.nextInt();
+            h = 0;
+        }
+         
+        else
+        {
+            System.out.println("Please enter the x co-ordinate: ");
+            xval = user_input.nextInt();
+            System.out.println("Please enter the y co-ordinate: ");
+            yval = user_input.nextInt();
+            System.out.println("Please enter the radius: ");
+            r = user_input.nextInt();
+            System.out.println("Please enter the height: ");
+            h = user_input.nextInt();
+        }
+        
+        
+        Point Point = new Point(xval, yval);
+        Circle Circle = new Circle(xval, yval, r);
+        Cylinder Cylinder = new Cylinder(xval, yval, r, h);
+        
+        Shape[] shapes = new Shape[3];
+        shapes[0] = Point;
+        shapes[1] = Circle;
+        shapes[2] = Cylinder;
+        
+        System.out.println(shapes[inputShape -1].getName() + ":" + shapes[inputShape - 1].toString());
+        System.out.println("Area: " + shapes[inputShape -1].getArea());
+        System.out.println("Volume: " + shapes[inputShape -1].getVolume());
+    }
+}
