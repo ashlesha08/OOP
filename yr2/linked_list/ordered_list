@@ -1,0 +1,37 @@
+public abstract class OrderedList extends List {
+	
+	int n = 0;
+	protected ListNode newNode;
+	//protected ListNode tempNode;
+	
+	protected abstract int compare (Object obj1, Object obj2);
+	
+	public void insert (Object newData) { 
+		if (firstNode == null)											//empty list
+			firstNode = lastNode = new ListNode(newData, null);
+		else{
+			
+			ListNode nextNode = firstNode;
+			ListNode prevNode = firstNode;
+			
+			while (true) {
+				
+				int n = compare(newData, nextNode.getData());
+				
+				if (n==-1) 
+				{break;}
+				
+				else{
+					prevNode = nextNode;
+					nextNode = nextNode.getNext();
+				}
+			}
+			
+			newNode.setData(newData);
+			prevNode.setNext(newNode);
+			newNode.setNext(nextNode);
+			
+		}
+
+	}
+}
