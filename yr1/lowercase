@@ -1,0 +1,25 @@
+import java.io.*;
+
+public class Lowercase {
+    public static void main (String[] args) throws IOException {
+            File file1 = new File("intext.txt");
+            File file2 = new File("outtext.txt"); 
+            char CharCounter = 0;       
+            BufferedReader in = (new BufferedReader(new FileReader(file1)));
+            PrintWriter out = (new PrintWriter(new FileWriter(file2)));
+
+            int ch;
+            while ((ch = in.read()) != -1){
+
+                if (Character.isUpperCase(ch)){
+                    Character.toLowerCase(ch);
+
+                }
+                out.write(ch);
+
+
+            }
+            in.close();
+            out.close();
+        }       
+    }
