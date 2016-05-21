@@ -1,0 +1,228 @@
+import java.util.Scanner;
+
+import java.lang.Math.*;
+
+
+
+public class MatchMaker{
+
+    public static void main(String arg[]){
+
+        User[] myUser = new User[50];//array of 50 since it is a dating website. This value may be increased
+
+        Scanner input = new Scanner(System.in);
+
+        
+        for(int i=0 ; i<myUser.length; i++)
+
+        {
+
+            myUser[i] = new User();
+
+        }
+
+        
+        System.out.println("Welcome to MatchMaking");
+
+        
+        
+        int option = 0;
+
+        
+        System.out.println("Please select an option below");
+
+        System.out.println("[1]Sign Up \n[2]Find Your Match \n[3]Exit");
+
+        option = input.nextInt();
+
+        input.nextLine();
+
+        int count = 0;//This will be used later as a reference for crosschecking individuals to find their matches.
+
+        
+        while   (option!= 3)
+
+        {
+
+            
+            if (option == 1)
+
+            {
+
+                
+                String name1;//includes first and surname
+
+                
+                System.out.println("Please enter your name ");
+
+                name1 = input.nextLine();
+
+                myUser[count].name = name1;
+
+                
+                System.out.println("Gender: [1] Male \n[2] Female");
+
+                int gender1 = input.nextInt();
+
+                myUser[count].gender = gender1;
+
+                
+                System.out.println("Please enter on a scale of 1 to 10 your preference of the following where 10 is the highest preference");
+
+                System.out.println("Clubs");
+
+                int club1  = input.nextInt();
+
+                myUser[count].club = club1;
+
+                
+System.out.println("Restaurants");
+
+                int food1 = input.nextInt();
+
+                myUser[count].food = food1;
+
+                
+                System.out.println("Movies");
+
+                int movie1 = input.nextInt();
+
+                myUser[count].movie = movie1;
+
+                
+                System.out.println("TV");
+
+                int tele1 = input.nextInt();
+
+                myUser[count].tele = tele1;
+
+                
+                
+                
+                System.out.println("You are registered \nyour reference number is "+count);
+
+                int ref = count + 1;
+
+                myUser[count].reference = ref;
+
+                myUser[count].counter = count;
+
+                myUser[count].printData();
+
+                
+                count ++;
+
+     
+            }
+
+            
+            if (option == 2)
+
+            {
+
+                System.out.println("Please enter your reference number :");
+
+                int number = input.nextInt();
+
+                System.out.println("DEBUG 1");
+
+                
+                System.out.println("Please enter your preferred gender");
+
+                System.out.println("[1] Male \n[2]Female");
+
+                              
+                int gender2 = input.nextInt();
+
+//Finds the smallest absolute difference in preferences among individuals
+
+                int min = 1000;
+
+                int absdifference;
+
+                int minposition = 1;
+
+                
+                int i = 0;
+
+                while(i < myUser.length )
+
+                {
+
+                    System.out.println(gender2 + "  " + myUser[i].gender );
+
+                    
+                   if (gender2 == myUser[i].gender )
+
+                   {
+
+                       
+                           System.out.println("DEBUG 3");
+ 
+  int minclub = Math.abs(myUser[number].club - myUser[i].club);
+
+                           int minrest = Math.abs(myUser[number].food-myUser[i].food);
+
+                           int minmovies = Math.abs(myUser[number].movie- myUser[i].movie);
+
+                           int mintele = Math.abs(myUser[number].tele - myUser[i].tele);
+
+                           
+
+                           
+                           absdifference = minrest + minmovies + mintele + minclub;
+
+                           
+                           if (absdifference < min)
+
+                            {
+
+                               min = absdifference;
+
+                               minposition = i;
+
+                           }
+
+
+
+                       }
+
+                    
+                    System.out.println("count = " + i);
+
+                    i++;
+
+                }
+
+               
+                String love = myUser[minposition].name;
+
+                System.out.println("Your perfect match based on your interests is: "+love);
+
+                    
+                }
+System.out.println("Welcome to MatchMaking");
+
+        
+        
+         option = 0;
+
+        
+        System.out.println("Please select an option below");
+
+        System.out.println("[1]Sign Up \n[2]Find Your Match \n[3]Exit");
+
+            option = input.nextInt();
+
+            input.nextLine();
+
+            
+        } // end of while loop
+
+        
+        
+        
+        
+    }
+
+}
