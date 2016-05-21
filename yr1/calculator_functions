@@ -1,0 +1,27 @@
+public class Calculator
+{
+    private int calculator1,calculator2,factorialNumber;
+
+    public void setNumbers(int x,int y)
+    {
+        calculator1 = x;
+        calculator2 = y;
+    }
+
+    public int addNumbers()
+    {
+        return calculator1+calculator2;
+    }
+    public int multiplyNumbers()
+    {
+        return calculator1*calculator2;
+    }
+    public int factorialNumber(int n)
+    {
+         factorialNumber=1;
+         for (int i=1; i <= n; i++)
+         factorialNumber=factorialNumber*i;
+         return factorialNumber;
+    }
+
+}
