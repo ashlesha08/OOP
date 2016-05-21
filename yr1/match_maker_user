@@ -1,0 +1,42 @@
+public class  User{
+
+    String name;
+
+    int food, gender, movie, tele, club, reference, counter;
+
+    
+        public void printData()
+
+        {
+
+        String gender="0";//gender needs to be initialised
+
+        if (gender == "1"){
+  gender= "Male";
+}
+
+        else if (gender == "2"){
+           gender = "Female";
+}
+
+     
+            
+            System.out.println("Your profile is:");
+
+   System.out.println("Name: " + name);
+
+            System.out.println("Gender: " + gender );
+
+            System.out.println("Likes Clubs: " + club);
+
+            System.out.println("Likes Restaurants: " + food);
+
+            System.out.println("Likes Movies: " + movie);
+
+            System.out.println("Likes TV: " + tele);
+
+            System.out.println("Your reference number is: " + counter );
+
+    }
+ 
+}
