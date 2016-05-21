@@ -1,0 +1,57 @@
+import java.util.Scanner;
+public class Calculatorapp2
+{
+
+    public static void main(String args[])
+    {
+        double result;
+        double number1=0;
+        double x;
+        double y;
+        double n;
+        boolean end = false;
+        Scanner input = new Scanner(System.in);
+        Calculator mycalculator = new Calculator();
+
+        while(!end){
+            System.out.println("Please choose one of the following options:");
+            System.out.println("    [1] - Set numbers");
+            System.out.println("    [2] - Add Numbers ");
+            System.out.println("    [3] - Multiply numbers");
+	          System.out.println("    [4]	- Factorial of number");
+            System.out.println("    [5]	- END of Programme"); 
+            System.out.print("Option:");
+            number1 = input.nextDouble();
+            if(number1 == 1)
+            {
+                System.out.print("Enter two numbers");
+                x=input.nextDouble();
+                y=input.nextDouble();
+                mycalculator.setNumbers((int) x,(int) y);
+            }
+            if(number1 == 2)
+            {
+                result= mycalculator.addNumbers();
+                System.out.println("Result: " + result);
+            }
+            if(number1 == 3)
+            {
+                result = mycalculator.multiplyNumbers();
+                System.out.println("Result: " +result);
+            }
+            if(number1 == 4)
+            {
+                System.out.print("Enter a number");
+                int number2;               
+                number2=input.nextInt();
+       	        result = mycalculator.factorialNumber(number2);
+                System.out.println("Result: " +result); 
+            }
+            if(number1 != 1 && number1!= 2 && number1!= 3 && number1!= 4)
+            {
+                end = true;
+            } 
+
+        }
+    }
+}
